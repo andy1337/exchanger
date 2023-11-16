@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>
+
+        EN Fast currency exchange | Exp-COIN
+
+    </title>
+
+    <link rel="shortcut icon" type="image/png" href="static/coinstart/img/favicon.png">
+    <meta name="description" content="">
+    <meta name="keywords"
+        content="CryptoMaker,exchange,обменник, обменять киви на биткоин, обменять киви на биткоины, обменять yandex на qiwi, обменять биткоин на сбербанк, обмен втб на qiwi, биткоин в рубли, ВТБ24, Яндекс Деньги, Альфа Банк,  Сбербанк">
+    <link rel='stylesheet' type='text/css' href="static/coinstart/styles/css/main.css@v=1015.css" />
+    <link rel='stylesheet' type='text/css' href="static/coinstart/styles/css/responsive.css@v=1015.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        header .left .logo {
+            background: url(/media/logo_head.svg);
+            width: 207px;
+            height: 70px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: -22px -66px;
+        }
+        @media screen and (max-width: 1070px) {
+            header {
+                background: #027afe;
+            }
+        }
+        
+        header {
+            background: #027afe;
+        }
+
+        footer {
+            background: #027afe;
+        }
+
+        footer .top .content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="content">
+            <div class="left">
+                <a href="/" class="logo">
+                </a>
+                <div class="nav">
+                    <div class="mob_nav">
+                        <a href="/faq"><span></span></a>
+                    </div>
+                    <ul>
+                        <li><a href="/rules">Rules of exchange</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/contacts">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+<!-- 
+                <div class="buttons">
+                    <a href="index.html#auth" class="modal-trigger login_b">Log in</a>
+                    <a href="index.html#reg" class="modal-trigger reg_b">Registration</a>
+                </div> -->
+            </div>
+        </div>
+    </header>
+    <div class="page">
+        <div id="tech" class="tech" style="display: none;">
+            <h1 style="font-weight: bold; font-size: 28px;">Technical break</h1>
+            <h1 style="font-size: 21px; font-weight: 100; margin: 5px 0 0 0;">will end in</h1>
+            <div id="time-tick"></div>
+        </div>
+        <div class="main_top">
+            <div class="content">
+                <div class="items">
+                    <div class="left">
+                        <p>We work around the clock every day</p>
+                    </div>
+                    <div class="right">
+                        <a href="/">
+                            <i class="material-icons" style="position: absolute;top: 11px;left: 20px;">bolt</i>
+                            Leave a review - enter the contest!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_ex">
+            <div class="content">
+                <div class="top">
+                    <h1>
+                        <i class="material-icons" style="color:#f44336;">rocket_launch</i>
+                        Fast currency exchange
+                    </h1>
+                    <div class="current f_unlock load-animate">
+                        <p class="num">
+                            <span>
+                                <i class="material-icons"
+                                    style="position: relative; top: 6px; color: #0078ff;">show_chart</i>
+                                Exchange rate:</span> <span id="in-course"></span> = <span id="to-course">
+                            </span>
+                        </p>
+                        <div class="timer">
+                            <div class="wrapper">
+                                <div class="pie spinner"></div>
+                                <div class="pie filler"></div>
+                                <div class="mask"></div>
+                            </div>
+                            <p>30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_form">
+                    <div class="items">
+                        <div class="form_top">
+                            <div class="item">
+                                <h2>
+                                    Give
+                                </h2>
+                                <div class="main_input f_unlock load-animate">
+                                    <input class="in-text" type="number" placeholder="Сумма" value="0"/>
+                                    <a class="currency-dropdown currency_dropdown_1 dropdown-trigger btn"
+                                        data-target="currency_dropdown_1" style="display:none;">
+                                        <span class="dropdown-currency-active"></span>
+                                        <span class="material-icons"
+                                            style="position: relative; left: 4px; font-size: 20px; top: 4px; color: black;">
+                                            expand_more
+                                        </span>
+                                    </a>
+                                    <label class="valuta-1-raw" style="display:none;">RUB</label>
+                                </div>
+                                <div class="main_select dropdown-trigger f_unlock load-animate"
+                                    data-target='pay_system_dropdown_1'>
+                                    <div class="select_active">
+                                        <div class="img">
+                                            <span>
+                                                <img class="mini-in-logo" src="#" alt="" />
+                                            </span>
+                                        </div>
+                                        <p id="bank-name-in"></p>
+                                    </div>
+                                </div>
+                                <div class="input__wrap radio-inputs networks_1" style="display:none;">
+                                    <div style="font-size: 16px;font-weight: 700; color: #2f3a43; margin-bottom: 5px;">
+                                        Select a network:</div>
+                                    <div class="networks_body">
+                                    </div>
+                                </div>
+                                <a class='dropdown-trigger btn dropdown_cities cities_1' href='index.html#'
+                                    data-target='cities_1' style="display:none;">
+                                    <span></span>
+                                    <span class="city_active">USA</span>
+                                    <span class="material-icons"
+                                        style="position: relative; left: 7px; top: -1px; font-size: 21px; float: right;">
+                                        unfold_more
+                                    </span>
+                                </a>
+                                <div class="way_notification " style="border-radius: 25px; display: none;">
+                                    <span class="way_notification__body"></span>
+                                </div>
+                                <div id="in-inputs">
+                                </div>
+                            </div>
+                            <div class="mid_item">
+                                <span class="material-icons"
+                                    style="position: relative; top: 6px; color: #0078ff52; font-size: 40px;">
+                                    arrow_right
+                                </span>
+
+                            </div>
+                            <div class="item">
+                                <h2>Get it</h2>
+                                <div class="main_input f_unlock load-animate">
+                                    <input class="to-text" type="number" placeholder="Amount" />
+                                    <a class="currency-dropdown currency_dropdown_2 dropdown-trigger btn"
+                                        data-target="currency_dropdown_2" style="display:none;">
+                                        <span class="dropdown-currency-active"></span>
+                                        <span class="material-icons"
+                                            style="position: relative; left: 4px; font-size: 20px; top: 4px; color: black;">
+                                            expand_more
+                                        </span>
+                                    </a>
+                                    <label class="valuta-2-raw" style="display:none;">USD</label>
+                                </div>
+                                <div class="main_select dropdown-trigger btn f_unlock load-animate"
+                                    data-target='pay_system_dropdown_2'>
+                                    <div class="select_active">
+                                        <div class="img">
+                                            <span>
+                                                <img class="mini-to-logo" src="index.html" alt="" />
+                                            </span>
+                                        </div>
+                                        <p id="bank-name-to"></p>
+                                    </div>
+                                </div>
+                                <div class="input__wrap radio-inputs networks_2" style="display:none;">
+                                    <div style="font-size: 16px;font-weight: 700; color: #2f3a43; margin-bottom: 5px;">
+                                        Select a network:</div>
+                                    <div class="networks_body">
+                                    </div>
+                                </div>
+                                <a class='dropdown-trigger btn dropdown_cities cities_2' href='index.html#'
+                                    data-target='cities_2' style="display:none;">
+                                    <span></span>
+                                    <span class="city_active"></span>
+                                    <span class="material-icons"
+                                        style="position: relative; left: 7px; top: -1px; font-size: 21px; float: right;">
+                                        unfold_more
+                                    </span>
+                                </a>
+                                <div id="to-inputs">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="errors form_bot">
+                            <div id="ip"></div>
+                            <div id="__all__"></div>
+                        </div>
+                        <div class="form_bot">
+                            <div class="main_input">
+                                <div id="pay-email">
+                                    <input type="email" placeholder="Email" />
+                                </div>
+                            </div>
+                            <div class="agree">
+                                <p>
+                                    By clicking on the "Start Swap" button, I agree to the
+                                    <a href="rules.html">ules of the exchange</a>
+                                </p>
+                            </div>
+                            <div class="button">
+                                <button onclick="if (!window.__cfRLUnblockHandlers) return false; claim();"
+                                    data-cf-modified-="">Start the exchange</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_rez">
+            <div class="content">
+                <h2>Reserves</h2>
+                <div class="items reserves_block">
+                    <div class="item load-animate">
+                        <div class="left">
+                            <div class="img"> <span><img src="https://coinstart.cc/media/pslogo/bitcoin_3pCkYPk.svg"
+                                        alt=""></span> </div>
+                        </div>
+                        <div class="right">
+                            <p class="name">Bitcoin</p>
+                            <p class="size" data-reserve-id="5"> <span>59.39176123</span> <span
+                                    style="font-weight: 800;">btc</span></p>
+                        </div>
+                    </div>
+                    <div class="item load-animate">
+                        <div class="left">
+                            <div class="img"> <span><img src="https://coinstart.cc/media/pslogo/bitcoin_3pCkYPk.svg"
+                                        alt=""></span> </div>
+                        </div>
+                        <div class="right">
+                            <p class="name">Bitcoin</p>
+                            <p class="size" data-reserve-id="5"> <span>59.39176123</span> <span
+                                    style="font-weight: 800;">btc</span></p>
+                        </div>
+                    </div>
+                    <div class="item load-animate">
+                        <div class="left">
+                            <div class="img"> <span><img src="https://coinstart.cc/media/pslogo/bitcoin_3pCkYPk.svg"
+                                        alt=""></span> </div>
+                        </div>
+                        <div class="right">
+                            <p class="name">Bitcoin</p>
+                            <p class="size" data-reserve-id="5"> <span>59.39176123</span> <span
+                                    style="font-weight: 800;">btc</span></p>
+                        </div>
+                    </div>
+                    <div class="item load-animate">
+                        <div class="left">
+                            <div class="img"> <span><img src="https://coinstart.cc/media/pslogo/bitcoin_3pCkYPk.svg"
+                                        alt=""></span> </div>
+                        </div>
+                        <div class="right">
+                            <p class="name">Bitcoin</p>
+                            <p class="size" data-reserve-id="5"> <span>59.39176123</span> <span
+                                    style="font-weight: 800;">btc</span></p>
+                        </div>
+                    </div>
+                    <div class="item load-animate">
+                        <div class="left">
+                            <div class="img"> <span><img src="https://coinstart.cc/media/pslogo/bitcoin_3pCkYPk.svg"
+                                        alt=""></span> </div>
+                        </div>
+                        <div class="right">
+                            <p class="name">Bitcoin</p>
+                            <p class="size" data-reserve-id="5"> <span>59.39176123</span> <span
+                                    style="font-weight: 800;">btc</span></p>
+                        </div>
+                    </div>
+                    <div class="item load-animate">
+                        <div class="left">
+                            <div class="img"> <span><img src="https://coinstart.cc/media/pslogo/bitcoin_3pCkYPk.svg"
+                                        alt=""></span> </div>
+                        </div>
+                        <div class="right">
+                            <p class="name">Bitcoin</p>
+                            <p class="size" data-reserve-id="5"> <span>59.39176123</span> <span
+                                    style="font-weight: 800;">btc</span></p>
+                        </div>
+                    </div>
+                    <div class="item load-animate">
+                        <div class="left">
+                            <div class="img"> <span><img src="https://coinstart.cc/media/pslogo/bitcoin_3pCkYPk.svg"
+                                        alt=""></span> </div>
+                        </div>
+                        <div class="right">
+                            <p class="name">Bitcoin</p>
+                            <p class="size" data-reserve-id="5"> <span>59.39176123</span> <span
+                                    style="font-weight: 800;">btc</span></p>
+                        </div>
+                    </div>
+                    <div class="item load-animate">
+                        <div class="left">
+                            <div class="img"> <span><img src="https://coinstart.cc/media/pslogo/bitcoin_3pCkYPk.svg"
+                                        alt=""></span> </div>
+                        </div>
+                        <div class="right">
+                            <p class="name">Bitcoin</p>
+                            <p class="size" data-reserve-id="5"> <span>59.39176123</span> <span
+                                    style="font-weight: 800;">btc</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_revs" style="display:none;">
+            <div class="content">
+                <h2>More <span class="count_load load-animate">7 000</span> reviews</h2>
+                <div class="items">
+                    <div class="line">
+                        <div class="item review_load load-animate" id="review1">
+                            <div class="top">
+                                <div class="img">
+                                    <span><img src="static/coinstart/img/rev_img.png" alt="" /></span>
+                                </div>
+                                <div class="name">
+                                    <p>Alex P</p>
+                                </div>
+                                <div class="type">
+                                    <div class="rev_ok"></div>
+                                </div>
+                            </div>
+                            <div class="bot">
+                                <p class="text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                    do eiusmod tempor incididunt ut labore et dolore magna
+                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
+                                <p class="date">31.01.2022 12:33</p>
+                            </div>
+                        </div>
+                        <div class="item review_load load-animate" id="review2">
+                            <div class="top">
+                                <div class="img">
+                                    <span><img src="static/coinstart/img/rev_img.png" alt="" /></span>
+                                </div>
+                                <div class="name">
+                                    <p>Avele199</p>
+                                </div>
+                                <div class="type">
+                                    <div class="rev_ok"></div>
+                                </div>
+                            </div>
+                            <div class="bot">
+                                <p class="text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                    do eiusmod tempor incididunt ut labore et dolore magna
+                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
+                                <p class="date">31.01.2022 12:33</p>
+                            </div>
+                        </div>
+                        <div class="item review_load load-animate" id="review3">
+                            <div class="top">
+                                <div class="img">
+                                    <span><img src="static/coinstart/img/rev_img.png" alt="" /></span>
+                                </div>
+                                <div class="name">
+                                    <p>Kunogol</p>
+                                </div>
+                                <div class="type">
+                                    <div class="rev_ok"></div>
+                                </div>
+                            </div>
+                            <div class="bot">
+                                <p class="text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                    do eiusmod tempor incididunt ut labore et dolore magna
+                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
+                                <p class="date">31.01.2022 12:33</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <a href="/">See all reviews</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ul id='pay_system_dropdown_1' class='dropdown-content main_select'>
+            <div class="select_hidden">
+                <div class="top">
+                    <a class="dropdown-type-filter active" data-type="c" data-way="1">Coin</a>
+                </div>
+                <div id="section-send">
+                    <div class="bot" id="fromPaySystems">
+                    </div>
+                </div>
+            </div>
+        </ul>
+
+        <ul id='pay_system_dropdown_2' class='dropdown-content main_select'>
+            <div class="select_hidden">
+                <div class="top">
+                    <a class="dropdown-type-filter active" data-type="all" data-way="2">Все</a>
+                    <a class="dropdown-type-filter" data-type="d" data-way="2">USD</a>
+                    <a class="dropdown-type-filter" data-type="e" data-way="2">EUR</a>
+                    <a class="dropdown-type-filter" data-type="c" data-way="2">Coin</a>
+                </div>
+                <div id="section-get">
+                    <div class="bot" id="toPaySystems">
+                    </div>
+                </div>
+        </ul>
+
+        <ul id='currency_dropdown_1' class='dropdown-content'>
+        </ul>
+
+        <ul id='currency_dropdown_2' class='dropdown-content'>
+        </ul>
+
+        <ul id='cities_1' class='dropdown-content'>
+            <li><a href="index.html#!">one</a></li>
+            <li><a href="index.html#!">two</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a href="index.html#!">three</a></li>
+            <li><a href="index.html#!"><i class="material-icons">view_module</i>four</a></li>
+            <li><a href="index.html#!"><i class="material-icons">cloud</i>five</a></li>
+        </ul>
+
+        <ul id='cities_2' class='dropdown-content'>
+            <li><a href="index.html#!">one</a></li>
+            <li><a href="index.html#!">two</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a href="index.html#!">three</a></li>
+            <li><a href="index.html#!"><i class="material-icons">view_module</i>four</a></li>
+            <li><a href="index.html#!"><i class="material-icons">cloud</i>five</a></li>
+        </ul>
+    </div>
+    <footer>
+        <div class="top">
+            <div class="content">
+                <div class="mail">
+                    <a href="/"><span class="__cf_email__"
+                            >exp-coin@gmail.com</span></a>
+                </div>
+                <!-- <div class="logo">
+                    <a href="index.html#"><img src="/media/logo_foot.svg" alt="" /></a>
+                </div> -->
+            </div>
+        </div>
+        <div class="bot">
+            <div class="content">
+                <a href="https://www.bestchange.ru/" target="_blank"><img src="static/coinstart/img/footer_ex_1.png"
+                        alt="" /></a>
+            </div>
+        </div>
+    </footer>
+    <div class="pop_bg"></div>
+    <div id="notify" class="modal">
+        <div class="pop_up pop_up_notify">
+            <div class="top">
+                <h2>Уведомление</h2>
+                <a onclick="if (!window.__cfRLUnblockHandlers) return false; $('#notify').modal('close')" class="close"
+                    data-cf-modified-=""><img src="static/coinstart/img/pop_close.png"
+                        alt="" /></a>
+            </div>
+            <div class="mid">
+                <div id="notify-in">
+                    <div class="notify-h">
+                    </div>
+                    <div class="notify-body">
+                    </div>
+                </div>
+                <div id="notify-to">
+                    <div class="notify-h">
+                    </div>
+                    <div class="notify-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="claim-check" class="modal">
+        <div class="pop_up pop_up_5">
+            <div class="top">
+                <h2>Confirmation of application</h2>
+                <a onclick="if (!window.__cfRLUnblockHandlers) return false; $('#claim-check').modal('close')"
+                    class="close" data-cf-modified-=""><img
+                        src="static/coinstart/img/pop_close.png" alt="" /></a>
+            </div>
+            <div class="mid">
+                <p>To complete the exchange operation, click "Go to payment".</p>
+                <div class="check-claim-content">
+                    <div class="check-claim-side from">
+                        <div>
+                            <div class="exchange__icon"><img src="index.html" alt=""></div>
+                            <div class="check-claim-ps"></div>
+                            <div class="check-claim-amount"></div>
+                        </div>
+                        <div class="check-claim-reqs">
+                        </div>
+                    </div>
+                    <div class="check-claim-devider">
+                        <i class="material-icons">
+                            navigate_next
+                        </i>
+                    </div>
+                    <div class="check-claim-devider-mobile">
+                        <i class="material-icons">
+                            keyboard_arrow_down
+                        </i>
+                    </div>
+                    <div class="check-claim-side to">
+                        <div>
+                            <div class="exchange__icon"><img src="media/pslogo/sberbank.svg" alt=""></div>
+                            <div class="check-claim-ps"></div>
+                            <div class="check-claim-amount"></div>
+                        </div>
+                        <div class="check-claim-reqs">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bot">
+                <a href="index.html#" id="claim-link" class="next"
+                    onclick="if (!window.__cfRLUnblockHandlers) return false; $(&quot;#claim-link&quot;).attr(&quot;onclick&quot;,&quot;return false;&quot;);$(&quot;#claim-link&quot;).text(&quot;Switching to pay..&quot;);setTimeout(function (){$(&quot;#claim-link&quot;).attr(&quot;onclick&quot;,&quot;&quot;);$(&quot;#claim-link&quot;).text(&quot;Go to payment&quot;);},10000)"
+                    data-cf-modified-="">Go to
+                    payment</a>
+                <a href="index.html#!" class="modal-close cancel">Cancel</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="claim-auto-check" class="modal">
+        <div class="pop_up pop_up_5">
+            <div class="top">
+                <h2>Confirmation of application</h2>
+                <a onclick="if (!window.__cfRLUnblockHandlers) return false; $('#claim-auto-check').modal('close')"
+                    class="close" data-cf-modified-=""><img
+                        src="static/coinstart/img/pop_close.png" alt="" /></a>
+            </div>
+            <div class="mid">
+                <p>To complete the exchange operation, click "Go to payment".</p>
+                <div class="check-claim-content">
+                    <div class="check-claim-side from">
+                        <div>
+                            <div class="exchange__icon"><img src="index.html" alt=""></div>
+                            <div class="check-claim-ps"></div>
+                            <div class="check-claim-amount"></div>
+                        </div>
+                        <div class="check-claim-reqs">
+                        </div>
+                    </div>
+                    <div class="check-claim-devider">
+                        <i class="material-icons">
+                            navigate_next
+                        </i>
+                    </div>
+                    <div class="check-claim-devider-mobile">
+                        <i class="material-icons">
+                            keyboard_arrow_down
+                        </i>
+                    </div>
+                    <div class="check-claim-side to">
+                        <div>
+                            <div class="exchange__icon"><img src="media/pslogo/sberbank.svg" alt=""></div>
+                            <div class="check-claim-ps"></div>
+                            <div class="check-claim-amount"></div>
+                        </div>
+                        <div class="check-claim-reqs">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bot">
+                <a href="index.html#" target="_blank" id="claim-auto-link"
+                    onclick="if (!window.__cfRLUnblockHandlers) return false; " class="next"
+                    data-cf-modified-="">
+                    Перейти к оплате
+                </a>
+                <a href="index.html#!" class="modal-close cancel">Cancel</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/coinstart/scripts/api_en.js?<%=id%>" type="text/javascript"></script>
+
+    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script type="text/javascript">
+        var lang = 'ru';
+    </script>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"
+        type="text/javascript"></script>
+    <script src="static/coinstart/scripts/vendor/jquery.ui.widget.js" type="text/javascript">
+    </script>
+    <script src="static/coinstart/scripts/jquery.fileupload.js" type="text/javascript">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+        type="text/javascript"></script>
+    <script src="static/coinstart/scripts/helpers.js?<%=id%>" type="text/javascript"></script>
+    <script src="static/coinstart/scripts/views.js?<%=id%>" type="text/javascript"></script>
+    <script src="static/coinstart/scripts/additions.js?<%=id%>" type="text/javascript"></script>
+    <script src="static/coinstart/scripts/more.js?<%=id%>" type="text/javascript"></script>
+    <script src="static/coinstart/scripts/requests.js?<%=id%>" type="text/javascript"></script>
+    <script src="static/coinstart/scripts/main.js?<%=id%>" type="text/javascript"></script>
+
+    <input type="hidden" name="csrfmiddlewaretoken" value="qAXo6X305eVZxX8IttSuR8hzfHZu2E3Lgqml9ezn6rSqKlZVl2SqJ8LNXaEcHADq">
+
+
+    <script type="text/javascript">
+        if (location.pathname === '/') {
+            window.onload = function () {
+                var _ps1 = {};
+                var _ps2 = {};
+
+                _ps1 = getPs(currentWay[0], true);
+                _ps2 = getPs(currentWay[1], true);
+
+                //debugger;
+            }
+        }
+    </script>
+
+
+
+    <script src="cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+        data-cf-settings="|49" defer=""></script>
+
+        <%- include('./smartsupp/index.ejs') %>
+</body>
+
+</html>
